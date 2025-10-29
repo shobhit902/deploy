@@ -3,7 +3,7 @@ const format = require("date-format");
 
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.get("/api/v1/instagram", (req, res) => {
   const instaSocial = {
@@ -37,6 +37,10 @@ app.get("/api/v1/facebook", (req, res) => {
   res.status(200).json(instaSocial);
 });
 
+app.get("/api/v1/:params", (req, res) => {
+  const params = req.params.params;
+  res.status(200).json({ params: params });
+});
 app.listen(port, () => {
   console.log(`server is running on port ${port}`);
 });
