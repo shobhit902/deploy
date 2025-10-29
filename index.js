@@ -15,6 +15,9 @@ app.get("/api/v1/instagram", (req, res) => {
 
   res.status(200).json(instaSocial);
 });
+app.get("/", (req, res) => {
+  res.send("Welcome to Social Media API");
+});
 app.get("/api/v1/linkedin", (req, res) => {
   const instaSocial = {
     username: "shobhit rawat linkedin final boss",
